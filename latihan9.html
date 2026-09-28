@@ -1,27 +1,53 @@
-<html>
+<!DOCTYPE html>
+<html lang="id">
+
 <head>
-<title>Belajar Javascript Platform</title>
+    <meta charset="UTF-8">
+    <title>Belajar Javascript - Percabangan Switch Case</title>
 </head>
+
 <body>
-<h1>Belajar Javascript</h1>
-<!-- id hasil -->
-<div id="hasil"></div>
-<script>
-var warna = "merah";
-switch (warna){
-    case "hitam":
-        teks = "Warna hitam";
-        break;
-    case "merah":
-        teks = "Warna merah";
-        break;
-    case "hijau":
-        teks = "Warna hijau";
-        break;
-    default:
-        teks = "Warna tidak terdeteksi";
-}
-document.getElementById("hasil").innerHTML = teks;
-</script>
+    <h1>Belajar Javascript - Percabangan Switch Case</h1>
+    <hr>
+
+    <h3>Pilih Warna:</h3>
+    <label for="warna">Pilih warna dari daftar:</label>
+    <select id="warna">
+        <option value="">-- Pilih warna --</option>
+        <option value="merah">Merah</option>
+        <option value="hitam">Hitam</option>
+        <option value="hijau">Hijau</option>
+        <option value="biru">Biru</option>
+    </select>
+    <button type="button" onclick="periksaWarna()">Periksa Warna</button>
+
+    <hr>
+    <section id="hasil" hidden>
+        <h3>Hasil Evaluasi:</h3>
+        <p>Warna yang diuji: <strong id="warnaDiuji"></strong></p>
+        <p>Keterangan: <strong id="keterangan"></strong></p>
+    </section>
+
+    <script>
+        function periksaWarna() {
+            var warna = document.getElementById("warna").value;
+            var keterangan;
+
+            switch (warna) {
+                case "hitam":
+                case "merah":
+                case "hijau":
+                    keterangan = "Warna terdeteksi";
+                    break;
+                default:
+                    keterangan = "Warna tidak terdeteksi";
+            }
+
+            document.getElementById("warnaDiuji").textContent = warna || "Belum memilih warna";
+            document.getElementById("keterangan").textContent = keterangan;
+            document.getElementById("hasil").hidden = false;
+        }
+    </script>
 </body>
+
 </html>
