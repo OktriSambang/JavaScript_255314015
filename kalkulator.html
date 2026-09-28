@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>Kalkulator Sederhana</title>
+</head>
+<body>
+    <h1>Kalkulator Penjumlahan dan pengurangan</h1>
+
+    Bilangan 1 <input type="text" id="bilangan1" size="30"><br>
+    Bilangan 2 <input type="text" id="bilangan2" size="30"><br>
+    <button onclick="tambah()">Tambah</button>
+    <button onclick="kurang()">Kurang</button><br>
+    Hasil <input type="text" id="hasil" size="25">
+
+    <script>
+        function tambah() {
+            var a = Number(document.getElementById("bilangan1").value);
+            var b = Number(document.getElementById("bilangan2").value);
+            document.getElementById("hasil").value = a + b;
+        }
+
+        function kurang() {
+            var a = Number(document.getElementById("bilangan1").value);
+            var b = Number(document.getElementById("bilangan2").value);
+            document.getElementById("hasil").value = a - b;
+        }
+    </script>
+</body>
+</html>
