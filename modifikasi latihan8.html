@@ -1,0 +1,24 @@
+<html>
+<head>
+<title>Belajar Javascript Platform</title>
+</head>
+<body>
+<h1>Belajar Javascript</h1>
+
+<!-- id hasil -->
+<div id="hasil"></div>
+
+<script>
+var tanggal = new Date();
+
+var hari = tanggal.getDate();
+var bulan = tanggal.getMonth() + 1;
+var tahun = tanggal.getFullYear();
+
+document.getElementById("hasil").innerHTML =
+    "Tanggal hari ini: " + hari + "/" + bulan + "/" + tahun;
+</script>
+
+</body>
+</html>
+```
